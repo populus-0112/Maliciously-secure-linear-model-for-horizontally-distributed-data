@@ -1,0 +1,26 @@
+### use SZ lossy compression to compress the data
+
+# step 1: convert data to binary data
+to.write = file("/test.dat", "wb")
+row=10000
+col=5000
+x = rnorm(row*col,0,1) # replace it with your data
+writeBin(x, to.write)
+
+# step 2: SZ compress
+module load sz   # or wherever SZ is installed on HiPerGator
+
+# Compress  (-d = double precision, -i = input, dims: col x row)
+sz -z -d -i test.dat -1 50000000          # flat 1D
+# or specify dimensions explicitly
+sz -z -d -i test.dat -2 5000 10000        # 2D: ncols x nrows
+
+# step 3: SZ decompress
+sz -x -d -s test.dat.sz -1 50000000
+# output: test.dat.sz.out
+
+# step 4: convert binary data back
+to.read = file("test.dat.sz.out", "rb") # download from hipergator
+row=10000
+col=5000
+data_d=readBin(to.read, double(), endian = "little",n=row*col)
