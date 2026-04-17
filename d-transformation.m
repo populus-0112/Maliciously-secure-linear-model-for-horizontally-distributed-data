@@ -1,3 +1,4 @@
+% Algorithm 2 in the manuscript
 % Step 1 — find d_i
 %% ============================================================
 %  find_di.m
