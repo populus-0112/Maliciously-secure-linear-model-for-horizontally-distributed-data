@@ -13,7 +13,7 @@ Stage 1 — Encryption
 
 1.1 Internal data preparation
 
-    -- d-transformation (Algorithm 2)
+    -- d-transformation.m
     
 1.2 Internal data encryption
 
