@@ -12,6 +12,7 @@ Key properties of the framework:
 Stage 1 — Encryption
 
 1.1 Internal data preparation
+
     -- d-transformation (Algorithm 2)
     
 1.2 Internal data encryption
@@ -22,6 +23,7 @@ Stage 1 — Encryption
 Stage 2 — Linear Model Computation
 
 2.1 Data transmission between agencies (i.e., data providers) and the server
+
     -- lossy compression (SZ).txt
 
 2.2 Linear model computation
