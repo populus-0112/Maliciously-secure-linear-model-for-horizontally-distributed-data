@@ -1,1 +1,1 @@
-# Maliciously-secure-linear-model-for-horizontally-distributed-data
+# Maliciously secure linear model for horizontally distributed data
