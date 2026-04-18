@@ -18,6 +18,7 @@ Stage 1 — Encryption
 1.1 Internal data preparation
 
     -- d-transformation.m
+    -- data preparation & encryption.m
     
 1.2 Internal data encryption
 
