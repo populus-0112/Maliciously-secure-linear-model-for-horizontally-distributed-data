@@ -9,6 +9,9 @@ Key properties of the framework:
 3. Malicious behavior detection via pseudo-outcome verification
 4. Lossy compression (SZ) applied to reduce communication cost with negligible accuracy loss
 
+<img width="777" height="373" alt="image" src="https://github.com/user-attachments/assets/46357bc2-f339-4d49-bce5-68be27e60842" />
+
+
 Stage 1 — Encryption
 
 1.1 Internal data preparation
