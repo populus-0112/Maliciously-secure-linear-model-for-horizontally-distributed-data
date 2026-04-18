@@ -1,0 +1,46 @@
+%   - Apply d-transformation to intercept column
+%   - Generate orthogonal matrix M_i
+%   - Generate random coefficient vectors b_i, a_i
+%   - Compute B_i and A_i as matrix polynomials
+
+    %% Load parameters and raw data
+    load('global_params.mat', 'p', 'd', 'n');
+    load(sprintf('raw_data_agency_%d.mat', i), 'X', 'Y');
+
+    %% d-transformation: multiply first column (intercept) by d
+    X(:, 1) = d * X(:, 1);
+    fprintf('Agency %d: d-transformation applied (d = %g)\n', i, d);
+
+    %% Generate n x n orthogonal matrix M_i via QR decomposition
+    rng(i * 100);   % seed for reproducibility
+    [M, ~] = qr(randn(n, n));
+    fprintf('Agency %d: Orthogonal matrix M (%dx%d) generated\n', i, n, n);
+
+    %% Generate random coefficient vectors
+    rng(i * 200);
+    b = randn(p, 1);    % p-dimensional for B_i
+    a = randn(5, 1);    % 5-dimensional for A_i
+
+    %% Generate base matrices B0 (p x p) and A0 (5 x 5)
+    rng(i * 300);
+    B0 = randn(p, p);
+    A0 = randn(5, 5);
+
+    %% Compute B_i = sum_{j=1}^{p} b_{ij} * B0^j
+    B = zeros(p, p);
+    B0_power = eye(p);
+    for j = 1:p
+        B0_power = B0_power * B0;
+        B = B + b(j) * B0_power;
+    end
+    fprintf('Agency %d: Matrix B (%dx%d) computed\n', i, p, p);
+
+    %% Compute A_i = sum_{j=1}^{5} a_{ij} * A0^j
+    A = zeros(5, 5);
+    A0_power = eye(5);
+    for j = 1:5
+        A0_power = A0_power * A0;
+        A = A + a(j) * A0_power;
+    end
+    fprintf('Agency %d: Matrix A (5x5) computed\n', i);
+
