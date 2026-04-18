@@ -24,6 +24,7 @@ Stage 1 — Encryption
 
 1.2 External sequential encryption
 
+    -- lossy compression (SZ).txt
 
 Stage 2 — Linear Model Computation
 
