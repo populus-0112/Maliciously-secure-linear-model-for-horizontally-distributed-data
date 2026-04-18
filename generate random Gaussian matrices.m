@@ -1,7 +1,7 @@
 function [B0, A0] = generate_base_matrices_gaussian(p)
 % GENERATE_BASE_MATRICES_GAUSSIAN
 %   Generate B0 (p x p) and A0 (5 x 5) where:
-%     - Each element ~ N(0,1)  [TRUE Gaussian elements]
+%     - Each element ~ N(0,1)  
 %     - All eigenvalues are unique
 %
 %   Strategy:
