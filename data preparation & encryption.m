@@ -46,7 +46,7 @@
 %   - Generate pseudo outcomes Y_s1, Y_s2, Y_s3, Y_s4
 %   - Form augmented outcome matrix Y_iA
 %   - Apply internal encryption: X* = M_i * X_i * B_i
-%                                 Y* = M_i * Y_iA * A_i
+%                                Y* = M_i * Y_iA * A_i
 
     %% Load parameters
     load('global_params.mat', 'alpha');
