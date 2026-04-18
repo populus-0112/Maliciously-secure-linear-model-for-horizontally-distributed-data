@@ -98,58 +98,6 @@ function result = has_unique_eigenvalues(eigvals, tol)
     result = all(diff_matrix(:) > tol);
 end
 
-
-%% =========================================================
-function report_full(M, name)
-% REPORT_FULL
-%   Report both element distribution AND eigenvalue properties.
-
-    fprintf('\n==============================\n');
-    fprintf('%s Full Report\n', name);
-    fprintf('==============================\n');
-
-    %% Element distribution
-    elements = M(:);
-    fprintf('\n[Element Distribution]\n');
-    fprintf('  Mean              : %+.6f  (expected ~0)\n',   mean(elements));
-    fprintf('  Std               : %.6f   (expected ~1)\n',   std(elements));
-    fprintf('  Skewness          : %+.6f  (expected ~0)\n',   skewness(elements));
-    fprintf('  Excess Kurtosis   : %+.6f  (expected ~0)\n',   kurtosis(elements)-3);
-
-    %% Jarque-Bera normality test
-    [jb_h, jb_p] = jbtest(elements);
-    fprintf('  Jarque-Bera test  : h=%d, p=%.4f ', jb_h, jb_p);
-    if jb_h == 0
-        fprintf('(PASS: cannot reject normality)\n');
-    else
-        fprintf('(FAIL: normality rejected)\n');
-    end
-
-    %% Kolmogorov-Smirnov test against N(0,1)
-    [ks_h, ks_p] = kstest(elements);
-    fprintf('  KS test vs N(0,1) : h=%d, p=%.4f ', ks_h, ks_p);
-    if ks_h == 0
-        fprintf('(PASS: consistent with N(0,1))\n');
-    else
-        fprintf('(FAIL: not N(0,1) - may need scaling)\n');
-    end
-
-    %% Eigenvalue properties
-    eigvals = eig(M);
-    n = length(eigvals);
-    diff_matrix = abs(eigvals - eigvals.');
-    diff_matrix(1:n+1:end) = Inf;
-    min_eig_dist = min(diff_matrix(:));
-
-    fprintf('\n[Eigenvalue Properties]\n');
-    fprintf('  Rank              : %d / %d\n',  rank(M), dim(M));
-    fprintf('  Condition number  : %.4e\n',      cond(M));
-    fprintf('  Min eig distance  : %.4e\n',      min_eig_dist);
-    fprintf('  All unique        : %d\n',        min_eig_dist > 1e-6);
-    fprintf('  Eigenvalues:\n');
-    for k = 1:n
-        fprintf('    lambda_%d = %+.6f %+.6fi\n', k, real(eigvals(k)), imag(eigvals(k)));
-    end
 end
 
 
