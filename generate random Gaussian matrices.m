@@ -91,6 +91,6 @@ function result = has_unique_eigenvalues(eigvals, tol)
 
     n = length(eigvals);
     diff_matrix = abs(eigvals - eigvals.');
-    diff_matrix(1:n+1:end) = Inf;
+    diff_matrix(1:n+1:n*n) = Inf;
     result = all(diff_matrix(:) > tol);
 end
