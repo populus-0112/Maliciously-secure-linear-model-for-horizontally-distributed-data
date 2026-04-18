@@ -13,6 +13,8 @@ Key properties of the framework:
 
 Before data encryption, the designated server—which may be any participating agency—generates a random Gaussian matrix $B_0$ ($B_0$ is a $p\times p$ matrix where each element follows a Gaussian distribution $N(0,1)$. We require $B_0$ to have $p$ unique eigenvalues.) and a $5\times 5$ random Gaussian matrix $A_0$ with 5 unique eigenvalues. The server generates $B_0$ and $A_0$, and shares with each agency.
 
+    -- generate random Gaussian matrices.m
+
 Prior to data transmission, agencies/server use SZ lossy compression ("lossy compression (SZ).txt") to compress data, which then decompresses data upon receipt.
 
 Stage 1 — Encryption
