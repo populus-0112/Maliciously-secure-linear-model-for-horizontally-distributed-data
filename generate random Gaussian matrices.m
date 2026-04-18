@@ -98,9 +98,6 @@ function result = has_unique_eigenvalues(eigvals, tol)
     result = all(diff_matrix(:) > tol);
 end
 
-end
-
-
 %% =========================================================
 function d = dim(M)
     d = size(M, 1);
