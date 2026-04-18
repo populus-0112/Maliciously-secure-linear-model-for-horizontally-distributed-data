@@ -78,5 +78,6 @@
     X_star = M * X  * B;       % n x p
     Y_star = M * Y_iA * A;     % n x 5
     fprintf('Agency %d: Internal encryption done\n', i);
-    fprintf('  X_star size: [%d x %d]\n', size(X_star,1), size(X_star,2));
-    fprintf('  Y_star size: [%d x %d]\n', size(Y_star,1), size(Y_star,2));
+    %% Save internally encrypted data
+    save(sprintf('agency_%d_encrypted_internal.mat', i), 'X_star', 'Y_star');
+    fprintf('Agency %d: Internal encryption saved\n', i);
