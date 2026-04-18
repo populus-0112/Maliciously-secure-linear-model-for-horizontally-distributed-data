@@ -10,6 +10,9 @@ writeBin(x, to.write)
 # step 2 (Linux bash): SZ compress
 module load sz   # or wherever SZ is installed on HiPerGator
 
+#### Compressed data are transmitted to other agencies/server.
+
+### After the agency/server receives the compressed data:
 # Compress  (-d = double precision, -i = input, dims: col x row)
 sz -z -d -i test.dat -1 50000000          # flat 1D
 # or specify dimensions explicitly
