@@ -50,8 +50,7 @@
 
     %% Load parameters
     load('global_params.mat', 'alpha');
-    load(sprintf('agency_%d_loop1.mat', i), 'X', 'Y', 'M', 'B', 'A');
-
+    
     n = size(X, 1);
 
     %% Generate pseudo outcomes
