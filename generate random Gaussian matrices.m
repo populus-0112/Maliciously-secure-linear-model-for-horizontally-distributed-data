@@ -36,9 +36,6 @@ function [B0, A0] = generate_base_matrices_gaussian(p)
     save('server_base_matrices.mat', 'B0', 'A0');
     fprintf('\nSaved to server_base_matrices.mat\n');
 
-    %% Report element distribution and eigenvalue properties
-    report_full(B0, 'B0');
-    report_full(A0, 'A0');
 end
 
 
