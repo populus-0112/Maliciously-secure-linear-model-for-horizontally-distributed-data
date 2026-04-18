@@ -15,14 +15,12 @@ Before data encryption, the designated server—which may be any participating a
 
 Stage 1 — Encryption
 
-1.1 Internal data preparation
+1.1 Internal data preparation & encryption
 
     -- d-transformation.m
     -- data preparation & encryption.m
-    
-1.2 Internal data encryption
 
-1.3 External sequential encryption
+1.2 External sequential encryption
 
 
 Stage 2 — Linear Model Computation
