@@ -2,7 +2,7 @@
 %   - Apply d-transformation to intercept column
 %   - Generate orthogonal matrix M_i
 %   - Generate random coefficient vectors b_i, a_i
-%   - Compute B_i and A_i as matrix polynomials
+%   - Compute B and A as matrix polynomials
 
     %% Load parameters and raw data
     load('global_params.mat', 'p', 'd', 'n');
