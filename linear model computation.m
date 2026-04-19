@@ -1,4 +1,3 @@
-function [beta_hat] = server_regression()
 % SERVER_REGRESSION
 %   Server receives encrypted X* and Y* from all agencies and
 %   derives the linear regression estimate.
@@ -63,5 +62,3 @@ function [beta_hat] = server_regression()
     beta_hat = XtX_star \ XtY_star;          % p x 5 (more stable than inv)
     fprintf('  beta_hat (encrypted space) size: [%d x %d]\n', ...
              size(beta_hat,1), size(beta_hat,2));
-
-end
