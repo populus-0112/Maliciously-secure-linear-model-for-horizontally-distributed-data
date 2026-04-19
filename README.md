@@ -34,6 +34,11 @@ Stage 2 — Linear Model Computation
 
 Stage 3 — Decryption
 
+The decryption conducted by agency i is easy and can be done using one Matlab code: 
+
+beta_decrypted = B * beta_star / A
+
+where
 
 Stage 4 — Malicious Behavior Detection
 
